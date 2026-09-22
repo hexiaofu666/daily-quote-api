@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>每日一言 API 演示</title></head>
+<body style="font-family:sans-serif;max-width:600px;margin:60px auto;text-align:center">
+<h2 id="q">加载中…</h2>
+<p id="a" style="color:#666"></p>
+<p style="font-size:13px;color:#888">数据来源：<a href="https://www.shop186.com/api/">句悦集每日一言API</a></p>
+<script>
+fetch("https://www.shop186.com/api/daily").then(r=>r.json()).then(d=>{
+  document.getElementById("q").textContent="「"+d.data.text+"」";
+  document.getElementById("a").textContent="—— "+d.data.author;
+});
+</script>
+</body></html>
